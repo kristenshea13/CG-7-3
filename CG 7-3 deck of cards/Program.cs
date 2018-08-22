@@ -80,7 +80,7 @@ namespace CG_7_3_deck_of_cards
 
 
 
-    class Card
+    public class Card
     {
         public int Face { get; set; }
         public string Suit { get; set; }
@@ -92,7 +92,7 @@ namespace CG_7_3_deck_of_cards
     }
 
 
-    class Deck
+    public class Deck
     {
         //deckArray
 
