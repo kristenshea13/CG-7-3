@@ -76,7 +76,7 @@ namespace CG_7_3_deck_of_cards
     //            select new Card(rank, suit);
 
     //        cards = query.ToArray();
-    //    }
+ 
 
 
 
@@ -91,13 +91,10 @@ namespace CG_7_3_deck_of_cards
 
 
     public class Deck
-
-        // : class name adds inheritance to new class, deck has face and suit
     {
+        //property called Cards
         //deckArray
         //random card draw
-        //property called Cards
-
 
 
     }
