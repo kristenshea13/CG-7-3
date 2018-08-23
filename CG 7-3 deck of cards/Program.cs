@@ -7,40 +7,37 @@ namespace CG_7_3_deck_of_cards
     {
         static void Main(string[] args)
         {
-            //Create a program that contains a deck of cards and randomly draws one.You will need a Card class to store
-            //information about each individual card.The Card class should have a method that gives you the full card name
-            //like “2 of Hearts”. You will need a Deck class that contains an array of all the cards.The Deck class will 
-            //need a method to draw a random card.Your main method in the Program class should create a deck object, draw 
-            //a random card and display the value.
-
+            //explain program
             Console.WriteLine("Pick a card!");
+            //added readline so user would have to hit enter to pick a card
             Console.ReadLine();
 
+            //create deck of cards using Deck class
             Deck deck = new Deck();
 
+            //draw random card from Card class
             Card card = deck.DrawCard();
 
+            //print card to console
             Console.WriteLine("You drew the {0}!", card.CardName());
 
             Console.ReadLine();
 
-
-
-
         }
-
-
-
     }
 
 
-
+    /// <summary>
+    /// create card class using properties for face value of card and the suit
+    /// </summary>
     public class Card
     {
         public int Face { get; set; }
         public string Suit { get; set; }
         
-
+        //created method for how card from card class is displayed, if Face is between 2 and 10 it will be the "2 of *suit*", 
+        //if Face is 1 it will be the "Ace of *suit*",
+        //if 11 "Jack of *suit*", if 12 "Queen of *suit*", if 13 "King of *suit*"
         public string CardName()
         {
             string faceValue = "";
@@ -58,29 +55,24 @@ namespace CG_7_3_deck_of_cards
 
             return $"{faceValue} of {Suit}";
         }
-
-
-
     }
-
-
 
     public class Deck
     {
-
-        //property called Cards
-        //deck list
-        //random card draw
+        //created a property for the list of cards
         public List<Card> Deckofcards { get; set; }
 
-        //constructor- to make sure the deck is always created and cannot draw a card before there is a deck
+        //used a constructor- to make sure user cannot draw a card before the deck is created
         public Deck()
         {
-            string[] suits = { "Hearts", "Clubs", "Diamonds", "Spades" };
+            //string for all 4 suits
+            string[] suitValues = { "Hearts", "Clubs", "Diamonds", "Spades" };
 
+            //initiated new list of cards for deck
             Deckofcards = new List<Card>();
 
-            foreach (var suit in suits)
+            //created a loop so as not to type out all 52 card values
+            foreach (var suit in suitValues)
             {
                 for (int face = 1; face <= 13; face++)
                 {
@@ -89,17 +81,18 @@ namespace CG_7_3_deck_of_cards
                         Face = face,
                         Suit = suit
                     };
-
+                    
+                    //add all card value/suit combinations to the Deckofcards
                     Deckofcards.Add(card);
 
                 }
-
-
             }
-
-
         }
 
+        /// <summary>
+        /// method to draw random card from Deck
+        /// </summary>
+        /// <returns>random card from deckofcards</returns>
         public Card DrawCard()
         {
             Random rnd = new Random();
@@ -108,11 +101,5 @@ namespace CG_7_3_deck_of_cards
             return Deckofcards[cardIndex];
 
         }
-
-
-
     }
-
-
-
 }
