@@ -84,20 +84,19 @@ namespace CG_7_3_deck_of_cards
     {
         public int Face { get; set; }
         public string Suit { get; set; }
+        public string Color { get; set; }
 
-
-
-        
 
     }
 
 
-    public class Deck : Card
+    public class Deck
 
         // : class name adds inheritance to new class, deck has face and suit
     {
         //deckArray
         //random card draw
+        //property called Cards
 
 
 
