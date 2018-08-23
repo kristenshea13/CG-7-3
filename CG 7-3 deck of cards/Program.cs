@@ -92,10 +92,12 @@ namespace CG_7_3_deck_of_cards
     }
 
 
-    public class Deck
+    public class Deck : Card
+
+        // : class name adds inheritance to new class, deck has face and suit
     {
         //deckArray
-
+        //random card draw
 
 
 
