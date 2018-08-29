@@ -92,11 +92,12 @@ namespace CG_7_3_deck_of_cards
         /// <summary>
         /// method to draw random card from Deck
         /// </summary>
-        /// <returns>random card from deckofcards</returns>
+        /// <returns>random card from full deckofcards</returns>
         public Card DrawCard()
         {
             Random rnd = new Random();
             int cardIndex = rnd.Next(0, 52);
+            //start at 0 for 1, end at 52 because end number is not inclusive and you have 52 cards
 
             return Deckofcards[cardIndex];
 
