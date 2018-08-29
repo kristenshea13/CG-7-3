@@ -35,7 +35,7 @@ namespace CG_7_3_deck_of_cards
         public int Face { get; set; }
         public string Suit { get; set; }
         
-        //created method for how card from card class is displayed, if Face is between 2 and 10 it will be the "2 of *suit*", 
+        //created method for how card from card class is displayed, if Face is between 2 and 10 it will be the "{number} of *suit*", 
         //if Face is 1 it will be the "Ace of *suit*",
         //if 11 "Jack of *suit*", if 12 "Queen of *suit*", if 13 "King of *suit*"
         public string CardName()
